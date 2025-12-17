@@ -71,7 +71,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   const Text(
-                    'DELIVERY APP',
+                    'Shopping APP',
                     style: TextStyle(
                       fontSize: 16,
                       letterSpacing: 2,
