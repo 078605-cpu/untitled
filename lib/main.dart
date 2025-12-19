@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'seller_profile_page.dart'; // Import the seller page
 
 void main() {
-
   runApp(const MyApp());
 }
 
@@ -22,14 +22,14 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // Dark green background
-      backgroundColor: const Color(0xFF2D5A4C),
+      backgroundColor: const Color(0xFF386356),
       body: Stack(
         children: [
           // White curved container at the bottom
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: MediaQuery.of(context).size.height * 0.35,
+              height: MediaQuery.of(context).size.height * 0.45, // Adjusted height
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -60,12 +60,26 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+
+                  const SizedBox(height: 15),
+                  // New button to navigate to the Seller Page
+                  _buildButton(
+                    text: 'Login as Seller',
+                    color: Colors.green, // Make it look different
+                    textColor: const Color(0xFF2D5A4C),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SellerProfilePage()),
+                      );
+                    },
+                  ),
                   const SizedBox(height: 20),
                   // Branding
                   const Text(
-                    'My',
+                    'UniMarketPlace',
                     style: TextStyle(
-                      fontSize: 48,
+                      fontSize: 30,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFFF4B41A),
                     ),
@@ -84,16 +98,20 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(height: 15),
                   _buildTextField(Icons.lock, 'Password', isObscure: true),
                   const SizedBox(height: 15),
-                  const Text(
-                    'Forgot Password?',
-                    style: TextStyle(color: Colors.white, fontSize: 12),
+                  const Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(color: Colors.black, fontSize: 12),
+                    ),
                   ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 25),
                   // Login Button
                   _buildButton(
                     text: 'Login',
                     color: const Color(0xFF3D6B5D),
                     textColor: Colors.white,
+                    onPressed: () {},
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(vertical: 10),
@@ -104,7 +122,9 @@ class LoginScreen extends StatelessWidget {
                     text: 'Create an account',
                     color: const Color(0xFFC4D3D0),
                     textColor: const Color(0xFF2D5A4C),
+                    onPressed: () {},
                   ),
+
                 ],
               ),
             ),
@@ -118,18 +138,16 @@ class LoginScreen extends StatelessWidget {
   Widget _buildTextField(IconData icon, String hint, {bool isObscure = false}) {
     return TextField(
       obscureText: isObscure,
-      style: const TextStyle(color: Colors.white),
+      style: const TextStyle(color: Colors.black),
       decoration: InputDecoration(
-        prefixIcon: Icon(icon, color: Colors.white70, size: 20),
+        prefixIcon: Icon(icon, color: Colors.grey.shade600, size: 20),
         hintText: hint,
-        hintStyle: const TextStyle(color: Colors.white60, fontSize: 14),
-        enabledBorder: OutlineInputBorder(
+        hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
+        filled: true,
+        fillColor: Colors.grey.shade200,
+        border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
-          borderSide: const BorderSide(color: Colors.white, width: 1.5),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
-          borderSide: const BorderSide(color: Colors.white, width: 2),
+          borderSide: BorderSide.none,
         ),
         contentPadding: const EdgeInsets.symmetric(vertical: 15),
       ),
@@ -137,7 +155,12 @@ class LoginScreen extends StatelessWidget {
   }
 
   // Helper method for Buttons
-  Widget _buildButton({required String text, required Color color, required Color textColor}) {
+  Widget _buildButton({
+    required String text,
+    required Color color,
+    required Color textColor,
+    required VoidCallback onPressed,
+  }) {
     return SizedBox(
       width: double.infinity,
       height: 55,
@@ -145,9 +168,9 @@ class LoginScreen extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-          elevation: 5,
+          elevation: color == Colors.transparent ? 0 : 5, // No shadow for transparent button
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           text,
           style: TextStyle(color: textColor, fontWeight: FontWeight.bold, fontSize: 16),
