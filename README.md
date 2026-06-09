@@ -1,4 +1,12 @@
-#Unimarket Sale is a group effort between multiple people https://github.com/LemonMan9103 https://github.com/AzizFixCoder https://github.com/078605-cpu https://github.com/Imzaa
+#Unimarket Sale is a group effort between multiple people:
+
+[LemonMan9103](https://github.com/LemonMan9103)
+
+[AzizFixCoder](https://github.com/AzizFixCoder)
+
+[078605-cpu](https://github.com/078605-cpu)
+
+[Imzaa](https://github.com/Imzaa)
 
 It's an idea of a Market place for university student that love to buy preloved item, as a way to save money. This project is localhosted and as of right now is not fully polished yet. 
 
