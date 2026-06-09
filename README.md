@@ -1,16 +1,12 @@
-# untitled
+#Unimarket Sale is a group effort between multiple people
 
-A new Flutter project.
+It's an idea of a Market place for university student that love to buy preloved item, as a way to save money. This project is localhosted and as of right now is not fully polished yet. 
 
-## Getting Started
+#Features
 
-This project is a starting point for a Flutter application.
+- Student Can be Both buyer and seller, giving student the chance to sell their preloved items and also the chance to buy them.
+- Automate system update if an item is already bought by other user, so it does not appear on others user interface
+- Since student can be both be buyer and seller, the user cannot see their own product listing on the dashboard
 
-A few resources to get you started if this is your first Flutter project:
+This project is not fully developed for deployment, any update will be coming here. 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
