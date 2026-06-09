@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "637752127146",
-    "project_id": "unisale-market",
-    "storage_bucket": "unisale-market.firebasestorage.app"
+    "project_number": "455793880562",
+    "project_id": "unimarket-6dd38",
+    "storage_bucket": "unimarket-6dd38.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:637752127146:android:470e11edaf0372cb602ad3",
+        "mobilesdk_app_id": "1:455793880562:android:2e6d64dd1a568da6c08f6b",
         "android_client_info": {
-          "package_name": "com.example.untitled"
+          "package_name": "com.example.admin"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBHZDVT6zuMUxG58UlouXDADuF-xWg5sY8"
+          "current_key": "AIzaSyDiFerp5CJF5kmPGbXOX1lsMAL5kjixpYc"
         }
       ],
       "services": {
